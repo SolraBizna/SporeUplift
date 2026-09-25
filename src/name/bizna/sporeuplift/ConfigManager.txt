@@ -1,0 +1,91 @@
+# SPORE Configuration rules for modern machines
+# Original by Andrew Willmott... sorry for mangling your work!
+# This file was modified by SporeUplift, and you should use SporeUplift for future changes.
+
+# (constants from original)
+set Off 0
+set On  1
+set Low    1
+set Medium 2
+set High   3
+seti shaderPath2_m 0
+seti shaderPath2_0 1
+seti shaderPath2_x 2
+seti shaderPath3_0 3
+
+setVariables
+
+setOption OptionShadows             $High
+setOption OptionTextureDetail       $High
+setOption OptionEffects             $High
+setOption OptionBakeQuality         $High
+setOption OptionLighting            $High
+setOption OptionPlanetQuality       $High
+setOption OptionDOF                 $High
+
+setOption OptionPhotoRes            $High
+setOption OptionVideoRes            $High
+setOption OptionAudioPerformance    $High
+setOption OptionGameQuality         $High
+
+setOption OptionDiskCacheSize       4  # 1 GB
+setOption OptionTutorialsEnabled    $On
+setOption OptionShowHints           $On
+setOption OptionEdgeScroll          $On
+setOption OptionBuddiesOnly         $Off
+setOption OptionFitToScreen         $Off
+setOption OptionExplainSporepedia    $On
+setOption OptionExplainPaintLikeThis $On
+
+setOption OptionExpireOld           $Off
+setOption OptionArchiveExpired      $Off
+setOption OptionExpireDays          30
+setOption OptionDownloadSize         8
+
+setOption OptionUpdateLimit         $Off
+setOption OptionUpdateLimitDays      7
+
+setOption OptionCaptureUI           $Off
+
+# TODO: What do these do?
+setOption OptionCellControls        $Off
+setOption OptionCreatureControls    $Off
+setOption OptionTribeControls       $Off
+setOption OptionCivControls         $Off
+setOption OptionSpaceControls       $Off
+
+intProp shaderPath $shaderPath3_0
+boolProp effectsInstancing true
+
+intProp terrainGenerateBrushesPerFrame 200
+intProp terrainGenerateTimeLimit 20
+
+boolProp MRT 1
+
+setResolution (1024 * 768)
+
+# TODO: is this necessary? was gated under Vista || Cider
+#intProp NumFramesToBuffer 3    # avoid GPU lock to reduce buffering -- leave it to the driver
+
+# TODO: evaluate
+intProp dropShadowQualityImage 1
+intProp dropShadowQualityText  1
+
+if ($safeMode)
+    trace "=== SAFE MODE"
+    alert "Running in safe mode" 8888 -info
+    setOption OptionLighting      $Low
+    setOption OptionShadows       $Low
+    setOption OptionEffects       $Low       
+    setOption OptionTextureDetail $Medium
+    setOption OptionPlanetQuality       $Low
+    setOption OptionAudioPerformance    $Low
+    setOption OptionPhotoRes            $Low
+    setOption OptionVideoRes            $Low
+    setOption OptionFitToScreen         $Off
+    intProp shaderPath $shaderPath2_m
+    boolProp effectsInstancing false
+    intProp dropShadowQualityImage 0
+    intProp dropShadowQualityText 0
+endif
+
