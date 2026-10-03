@@ -255,12 +255,12 @@ public class Paths {
         return true;
     }
     static File searchForSporeIn(File path) {
-        System.err.println("  Searching for a SPORE directory in "+path.toString());
+        SporeUplift.stderrMessage("search.possible", path.toString());
         String[] contents = path.list();
         for(int n = 0; n < contents.length; ++n) {
             if(contents[n].toLowerCase(Locale.ENGLISH).equals("spore")) {
                 path = new File(path, contents[n]);
-                System.err.println("    (found it)");
+                SporeUplift.stderrMessage("search.success");
                 return path;
             }
         }
