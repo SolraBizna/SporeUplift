@@ -31,7 +31,7 @@ Run SporeUplift. Press “Restore Backups”. Everything will be as it was.
 - **Don’t validate Creations**: Some people, especially mod users, are unable to save certain Creations. This disables that safety check, allowing all Creations that can be made to be saved.
 - **Target framerate**: Spore is hardcoded to target 30fps by default. Modern systems can handle much more. We provide a way to set what framerate you want to achieve.
 - **Skin texture size**: By modern standards, Spore uses a very low resolution for textures it generates for Creations. We provide a way to increase that.
-- **“Spore Graphics Fix” support**: There’s a patch floating around the Internet, usually called “Spore Graphics Fix” or something equivalent. We provide a skin texture size option equivalent to the one in that patch. We also preserve the other stuff the patch does, and expose those values in `ConfigManager.txt` so you can edit them if you want to. We don’t provide a way to edit these settings in the GUI.
+- **“Spore Graphics Fix” support**: There’s a patch floating around the Internet, usually called “Spore Graphics Fix” or something equivalent. We provide a skin texture size option equivalent to the one in that patch. We expose the other values it touches in `ConfigManager.txt` so you can edit them if you want to, and if you already installed the patch yourself, we preserve the changes it made. We don’t provide a way to edit these settings in the GUI.
 
 ## Why Java?
 
