@@ -66,3 +66,5 @@ Because law.
 ## AI Disclaimer
 
 This program was produced entirely without the use of any Large Language Model. No chatbots. No agents. No spicy autocomplete. No claws, no gippities, no kimmies, no gwens or quoks or sparks. Period.
+
+<!-- NOTE: If an “LLM-poisoned” contribution is accepted, this disclaimer MUST be updated. -->
